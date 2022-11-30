@@ -42,9 +42,9 @@ font-family: 'Roboto', sans-serif;
 }
 :root{
     /* var(--w-container) */
-    --w-container: 80vw;
+    --w-container: 95vw;
     /* var(--h-container) */
-    --h-container: 90vh;
+    --h-container: 95vh;
     
 }
 #container{
@@ -90,9 +90,8 @@ font-family: 'Roboto', sans-serif;
     width: var(--w-chat);
     height: var(--h-chat);
     border: 1px solid var(--color-border);
-
-    /* debug */
-    background-color: #e2dad2;
+    background-image: url(../img/mine.jpg);
+    
 }
 :root{
     /* var(--w-header) */
@@ -168,7 +167,7 @@ header .info{
     color: var(--color-grigio-chiaro);
 }
 .icon:hover{
-    background-color: rgba(0, 0, 0, 0.087);
+    background-color: rgba(0, 0, 0, 0.053);
 }
 #proposta{
     display: flex;
