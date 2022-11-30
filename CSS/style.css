@@ -1,16 +1,13 @@
 /* roboto */
 /* 
-
-
 font-family: 'Roboto', sans-serif;
-
 */
 
-/* :root{ */
-    /* var(--w-colonna) */
-    /* --w-colonna: 130px; */
+:root{
+    /* var(--color-border) */
+    --color-border: #d4d4d4;
     
-/* } */
+}
 
 *{
     margin:0;
@@ -20,5 +17,91 @@ font-family: 'Roboto', sans-serif;
 }
 
 
+#sfondo-top{
+    width: 100%;
+    height: calc(15vh);
+    position: relative;
+    background-color: #329486;
+}
+#sfondo-bottom{
+    width: 100%;
+    height: calc(85vh);
+    background-color: #d7dad4;
+}
+:root{
+    /* var(--w-container) */
+    --w-container: 80vw;
+    /* var(--h-container) */
+    --h-container: 90vh;
+    
+}
+#container{
+    width: var(--w-container) ;
+    height: var(--h-container) ;
+    /* centro con il position absolute (non posso usare flex) */
+    left: calc(50% - (var(--w-container) / 2));
+    top: calc(50vh - (var(--h-container) / 2));
+    position: absolute;
+    display: flex;
 
 
+    /* debug */
+    background-color: crimson;
+}
+:root{
+    /* var(--w-navbar) */
+    --w-navbar: 30%;
+    /* var(--h-navbar) */
+    --h-navbar: 100%;
+    
+}
+#navbar{
+    width: var(--w-navbar);
+    height: var(--h-navbar);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+
+    /* debug */
+    background-color: rgb(127, 220, 20);
+}
+
+:root{
+    /* var(--w-chat) */
+    --w-chat: calc(100% - var(--w-navbar));
+    /* var(--h-chat) */
+    --h-chat: 100%;    
+}
+#chat{
+    width: var(--w-chat);
+    height: var(--h-chat);
+    border: 1px solid var(--color-border);
+
+    /* debug */
+    background-color: rgb(220, 20, 180);
+}
+
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    /* debug */
+    background-color: chocolate;
+
+}
+.avatar{
+    width: 40px;
+    height: 40px;
+    /* border-radius: 50%; */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.img-avatar{
+    width: 100%;
+    height: auto;
+    /* border-radius: 50%; */
+}
