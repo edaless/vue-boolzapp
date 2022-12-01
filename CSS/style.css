@@ -317,25 +317,10 @@ input{
     /* height: 100px; */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 10px 0;
     background-color: var(--color-marroncino-orrendo);
 }
-/* 
-.tasto{
-    width: 40px;
-    height: 30px;
-    border-radius: 3px;
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-grigio);
-
-}
-.tasto:hover{
-    background-color: var(--color-hover);
-} */
 
 .console input{
     border-radius: 3px;
@@ -366,6 +351,7 @@ input{
         /* var(--w-message) */
         --w-message: 250px;
     }
+
  }
  @media screen and (max-width: 1060px){
     :root{
@@ -375,7 +361,64 @@ input{
  }
  @media screen and (max-width: 938px){
     :root{
+        /* var(--w-navbar) */
+        --w-navbar: 60px;
         /* var(--w-message) */
-        --w-message: 150px;
+        --w-message: 280px;
     }
+    #navbar .info, 
+    #navbar .orario, 
+    #navbar .nome, 
+    #navbar .icon, 
+    #cerca{
+        display: none;
+    }
+    .contatto, #proposta, #navbar header{
+        justify-content: center;
+    }
+    #navbar .avatar, #navbar .avatar *{
+        display: flex;
+    }
+ }
+ @media screen and (max-width: 900px){
+    :root{
+        /* var(--w-message) */
+        --w-message: 250px;
+    }
+ }
+ @media screen and (max-width: 752px){
+    :root{
+        /* var(--w-message) */
+        --w-message: 200px;
+    }
+ }
+ @media screen and (max-width: 618px){
+    
+    #navbar{
+        display: none;
+    }
+    :root{
+        /* var(--w-chat) */
+        --w-chat: 100%;
+        
+    }
+
+ }
+ @media screen and (max-width: 348px){
+    
+    :root{
+        /* var(--w-container) */
+        --w-container: 100%;
+        /* var(--h-container) */
+        --h-container: 100vh;
+        
+    }
+
+ }
+ @media screen and (max-width: 310px){
+    
+    .accesso{
+        display: none;
+    }
+
  }
