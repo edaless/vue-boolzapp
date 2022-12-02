@@ -5,7 +5,6 @@ const {createApp} = Vue
 createApp({
     data(){
         return{      
-            contactActive: 0,
 
             contacts: [
                 {
@@ -169,13 +168,30 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            contactActive: 0,
+
+            newText: ""
 
         }
     },
     methods:{
         aggiornaActive(index){
             this.contactActive = index;
+        },
+
+        invia(){
+            if(this.newText != ""){
+                this.contacts[this.contactActive].messages.push(
+                    {
+                        date: '10/01/2020 15:51:00',
+                        text: this.newText,
+                        status: 'sent'
+                    }
+                );
+                this.newText = "";
+            };
         }
         
     }
