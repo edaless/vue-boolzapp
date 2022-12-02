@@ -58,15 +58,17 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
-
+                
+                
 
                 <div id="contatti">
 
 
                     <div class = "contatto" 
                     v-for = "(contatto, index) in contacts" 
+                    @click = "aggiornaActive(index)"
                     :class = "index === contactActive ? 'active'"
-                    @click = "aggiornaActive(index)">
+                    >
                         <span class="flex">
                             <div class="avatar">
                                 <img :src='contatto.avatar' class="img-avatar" alt="">
