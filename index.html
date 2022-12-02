@@ -67,7 +67,7 @@
                     <div class = "contatto" 
                     v-for = "(contatto, index) in contacts" 
                     @click = "aggiornaActive(index)"
-                    :class = "index === contactActive ? 'active'"
+                    :class = "index === contactActive ? 'active' : null"
                     >
                         <span class="flex">
                             <div class="avatar">
