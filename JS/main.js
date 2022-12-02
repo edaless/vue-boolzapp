@@ -191,11 +191,44 @@ createApp({
                     }
                 );
                 this.newText = "";
+                
+                // this.contacts[this.contactActive].messages.push(
+                //     {
+                //         date: '10/01/2020 25:51:00',
+                //         text: "ok",
+                //         status: 'received'
+                //     }
+                // );  
+
+                // tentativo #1
+                // this.contacts[this.contactActive].messages.push(
+                //     
+                // );
+                // console.log(risposta());
+                time();
+                
             };
         }
         
     }
 }).mount('#container')
+function time(){
+    let frase;
+    setTimeout(function(){
+        frase = risposta();
+        console.log(frase);
+    }, 1000)
+    console.log(frase);
+}
+function risposta(){
+    return `    {
+    date: '10/01/2020 25:51:00',
+    text: 'ok',
+    status: 'received'
+    }`
+}
+
+
 
 // const {createApp} = Vue
 
