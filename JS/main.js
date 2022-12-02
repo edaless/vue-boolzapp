@@ -182,8 +182,11 @@ createApp({
         },
 
         invia(){
+            const messaggi = this.contacts[this.contactActive].messages;
             if(this.newText != ""){
-                this.contacts[this.contactActive].messages.push(
+
+                // mio messaggio inviato
+                messaggi.push(
                     {
                         date: '10/01/2020 15:51:00',
                         text: this.newText,
@@ -191,44 +194,29 @@ createApp({
                     }
                 );
                 this.newText = "";
+                // invia la risposta ok nel array all'indirizzo messaggi
                 
-                // this.contacts[this.contactActive].messages.push(
-                //     {
-                //         date: '10/01/2020 25:51:00',
-                //         text: "ok",
-                //         status: 'received'
-                //     }
-                // );  
-
-                // tentativo #1
-                // this.contacts[this.contactActive].messages.push(
-                //     
-                // );
-                // console.log(risposta());
-                time();
+                setInterval(risposta(messaggi), 1000);
+                
                 
             };
         }
         
     }
-}).mount('#container')
-function time(){
-    let frase;
-    setTimeout(function(){
-        frase = risposta();
-        console.log(frase);
-    }, 1000)
-    console.log(frase);
-}
-function risposta(){
-    return `    {
-    date: '10/01/2020 25:51:00',
-    text: 'ok',
-    status: 'received'
-    }`
-}
+}).mount('#container');
 
 
+function risposta(indirizzo){
+    
+    setInterval(console.log("cipollina"), 1000);
+    indirizzo.push(
+        {
+            date: '10/01/2020 144:51:00',
+            text: 'ok',
+            status: 'received'
+        }
+    );
+};
 
 // const {createApp} = Vue
 
