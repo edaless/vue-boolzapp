@@ -247,6 +247,10 @@ input{
 .contatto:hover{
     background-color: #e8eaea;
 }
+.active{
+    background-color: #e8eaea;
+
+}
 .ultimo-mess{
     font-size: 10px;
     color: var(--color-grigio-chiaro);
