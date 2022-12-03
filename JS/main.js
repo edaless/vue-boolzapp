@@ -194,28 +194,30 @@ createApp({
                     }
                 );
                 this.newText = "";
-                // invia la risposta ok nel array all'indirizzo messaggi
+
+                // invia la risposta ok nel array all'indirizzo messaggi                
+                risposta(messaggi);             
                 
-                setInterval(risposta(messaggi), 1000);
+                
                 
                 
             };
         }
-        
     }
 }).mount('#container');
 
-
 function risposta(indirizzo){
+    setTimeout(function(){
+        indirizzo.push(
+            {
+                date: '10/01/2020 144:51:00',
+                text: 'ok!!!!',
+                status: 'received'
+            }
+        );
+    }, 1000 );
+                    
     
-    setInterval(console.log("cipollina"), 1000);
-    indirizzo.push(
-        {
-            date: '10/01/2020 144:51:00',
-            text: 'ok',
-            status: 'received'
-        }
-    );
 };
 
 // const {createApp} = Vue
