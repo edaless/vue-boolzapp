@@ -55,8 +55,9 @@
                     <div id="tasto-lente">
                         <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="ricerca">
                 </div>
+                
 
                 
                 
@@ -67,8 +68,17 @@
                     <div class = "contatto" 
                     v-for = "(contatto, index) in contacts" 
                     @click = "aggiornaActive(index)"
-                    :class = "index === contactActive ? 'active' : ''"
+                    :class = "index === contactActive ? 'active' : '',
+                    ricerca !== '' ? (contatto.name.includes(ricerca) ? '' : 'disp-none') : '' "
                     >
+                    <!-- spiego 
+                        "ricerca !== '' ? (contatto.name.includes(ricerca) ? '' : 'disp-none') : ''" :
+                            se la ricerca è diversa dal vettore nullo:
+                                se il nome del contato in questione include la stringa di ricerca: 
+                                    non fare niente (aggiungi stringa vuota alle classi)
+                                altrimenti: aggiungi classe display none.
+                            altrimenti: non fare niente (aggiungi stringa vuota alle classi)
+                     -->
                         <span class="flex">
                             <div class="avatar">
                                 <img :src='contatto.avatar' class="img-avatar" alt="">
@@ -139,14 +149,7 @@
                         </div>
 
                     </span>
-                    <!-- <span class="message yours">
-                        <div class="text">
-                            ok
-                        </div>
-                        <div class="orario">
-                            12:00
-                        </div>
-                    </span> -->
+                    
                 </div>
 
                 <div class="console">

@@ -172,7 +172,8 @@ createApp({
 
             contactActive: 0,
 
-            newText: ""
+            newText: "",
+            ricerca: ""
 
         }
     },
@@ -180,7 +181,6 @@ createApp({
         aggiornaActive(index){
             this.contactActive = index;
         },
-
         invia(){
             const messaggi = this.contacts[this.contactActive].messages;
             if(this.newText != ""){
@@ -210,7 +210,7 @@ function risposta(indirizzo){
     setTimeout(function(){
         indirizzo.push(
             {
-                date: '10/01/2020 144:51:00',
+                date: '10/01/2020 15:51:01',
                 text: 'ok!!!!',
                 status: 'received'
             }
@@ -219,6 +219,7 @@ function risposta(indirizzo){
                     
     
 };
+
 
 // const {createApp} = Vue
 
