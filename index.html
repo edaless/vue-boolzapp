@@ -26,7 +26,7 @@
                 <header>
                     <span class="flex-al-center">
                         <div class="avatar">
-                            <img src="img/avatar_io.jpg" class="img-avatar" alt="">
+                            <img src="https://picsum.photos/200?random=100000" class="img-avatar" alt="">
                         </div>
                         <span class="nome">Emanuele</span>
                     </span>
@@ -68,15 +68,27 @@
                     <div class = "contatto" 
                     v-for = "(contatto, index) in contacts" 
                     @click = "aggiornaActive(index)"
-                    :class = "index === contactActive ? 'active' : '',
-                    ricerca !== '' ? (contatto.name.includes(ricerca) ? '' : 'disp-none') : '' "
+                    :class = "
+                        index === contactActive ? 'active' : '',
+
+                        ricerca !== '' ? 
+                            (
+                            (contatto.name.toLowerCase()).includes(ricerca.toLowerCase()) ?
+                                '' 
+                            : 
+                                'disp-none'
+                            ) 
+                        : 
+                            '' 
+                    "
                     >
                     <!-- spiego 
-                        "ricerca !== '' ? (contatto.name.includes(ricerca) ? '' : 'disp-none') : ''" :
-                            se la ricerca è diversa dal vettore nullo:
-                                se il nome del contato in questione include la stringa di ricerca: 
+                        "ricerca !== '' ? ((contatto.name.toLowerCase()).includes(ricerca.toLowerCase()) ?  ''   :   'disp-none' )  :   ''   
+                            se la ricerca è diversa da un vettore vuoto:
+                                se il nome, in minuscolo, del contatto in questione include la stringa di ricerca in minuscolo: 
                                     non fare niente (aggiungi stringa vuota alle classi)
-                                altrimenti: aggiungi classe display none.
+                                altrimenti: 
+                                    aggiungi classe display none.
                             altrimenti: non fare niente (aggiungi stringa vuota alle classi)
                      -->
                         <span class="flex">
@@ -137,6 +149,7 @@
                 </header>
 
                 <div class="conversation">
+
                     <span 
                     class="message"  
                     v-for="message in contacts[contactActive].messages"  
