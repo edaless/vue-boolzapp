@@ -261,7 +261,7 @@ input{
 .contatto:last-child{
     border: 0;
 }
-.contatto:hover{
+.contatto:not(.active):hover{
     background-color: #f0f0f057;
 }
 .active{
