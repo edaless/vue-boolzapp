@@ -71,25 +71,36 @@
                     :class = "
                         index === contactActive ? 'active' : '',
 
-                        ricerca !== '' ? 
+                        ricerca === '' ? 
+                            ''
+                        :
                             (
-                            (contatto.name.toLowerCase()).includes(ricerca.toLowerCase()) ?
-                                '' 
-                            : 
-                                'disp-none'
+                                (contatto.name.toLowerCase()).includes(ricerca.toLowerCase()) ?
+                                    '' 
+                                : 
+                                    'disp-none'
                             ) 
-                        : 
-                            '' 
                     "
                     >
                     <!-- spiego 
-                        "ricerca !== '' ? ((contatto.name.toLowerCase()).includes(ricerca.toLowerCase()) ?  ''   :   'disp-none' )  :   ''   
-                            se la ricerca è diversa da un vettore vuoto:
-                                se il nome, in minuscolo, del contatto in questione include la stringa di ricerca in minuscolo: 
-                                    non fare niente (aggiungi stringa vuota alle classi)
-                                altrimenti: 
-                                    aggiungi classe display none.
-                            altrimenti: non fare niente (aggiungi stringa vuota alle classi)
+
+                        ricerca === '' ? 
+                            ''
+                        :
+                            (
+                                (contatto.name.toLowerCase()).includes(ricerca.toLowerCase()) ?
+                                    '' 
+                                : 
+                                    'disp-none'
+                            ) 
+                    
+                    se la ricerca è un vettore vuoto:
+                        non fare niente (aggiungi stringa vuota alle classi)
+                    altrimenti: 
+                        se il nome, in minuscolo, del contatto in questione include la stringa di ricerca in minuscolo: 
+                            non fare niente (aggiungi stringa vuota alle classi)
+                        altrimenti: 
+                            aggiungi classe display none.
                      -->
                         <span class="flex">
                             <div class="avatar">

@@ -166,18 +166,69 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            text: 'Ciao, andiamo a mangiare la pizza stasera?',
+                            text: 'Ciao, io sono Giovanni B.',
                             status: 'received'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            text: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                            text: 'Sì, l\'ho notato',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:51:00',
-                            text: 'OK!!',
+                            text: 'Ah, ok',
                             status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            text: 'Va beh dai, dimmi qualcosa a sto punto',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            text: 'Eh ma cosa?',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            text: 'Non lo so, qualcosa. Qualunque cosa',
+                            status: 'sent'
+                        }
+                    ],
+                },
+                {
+                    name: 'Alessio Boh',
+                    avatar: 'https://picsum.photos/200?random=6',
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            text: 'Ciao, io sono Alessio Boh',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            text: 'Sì, l\'ho notato',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            text: 'Ah, ok',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            text: 'Va beh dai, dimmi qualcosa a sto punto',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            text: 'Eh ma cosa?',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            text: 'Non lo so, qualcosa. Qualunque cosa',
+                            status: 'sent'
                         }
                     ],
                 }
@@ -208,7 +259,7 @@ createApp({
                 );
                 this.newText = "";
 
-                // invia la risposta ok nel array all'indirizzo messaggi                
+                // invia la risposta ok nel array all'indirizzo: messaggi                
                 risposta(messaggi);             
                 
                 
@@ -216,6 +267,23 @@ createApp({
                 
             };
         }
+
+
+        // purtroppo con la funzione nei methods non va
+        // ,
+        // risposta(indirizzo){
+        //     setTimeout(function(){
+        //         indirizzo.push(
+        //             {
+        //                 date: '10/01/2020 15:51:01',
+        //                 text: 'ok!!!!',
+        //                 status: 'received'
+        //             }
+        //         );
+        //     }, 1000 );
+                            
+            
+        // }
     }
 }).mount('#container');
 
@@ -228,9 +296,7 @@ function risposta(indirizzo){
                 status: 'received'
             }
         );
-    }, 1000 );
-                    
-    
+    }, 1000 );       
 };
 
 

@@ -282,7 +282,9 @@ input{
 
 
 .conversation{
-    width: 90%;
+    width: 100%;
+    padding: 0 5%;
+    /* soluzione per avere la scrollbar fuori dai messaggi */
     /* max-width: 800px; */
     height: 100%;
     display: flex;
